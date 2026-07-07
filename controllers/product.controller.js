@@ -94,9 +94,11 @@ productController.getProducts = async (req, res) => {
       include: [
         {
           model: Category,
+          as: "category",
         },
         {
           model: Vendor,
+          as: "vendor",
         },
       ],
 
@@ -121,9 +123,11 @@ productController.getSingleProduct = async (req, res) => {
       include: [
         {
           model: Category,
+          as: "category",
         },
         {
           model: Vendor,
+          as: "vendor",
         },
       ],
     });

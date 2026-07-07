@@ -48,4 +48,36 @@ router.get(
   vendorController.myProducts,
 );
 
+// GET MY PRODUCT BY ID
+router.get(
+  "/my-products/:id",
+  authMiddleware.checkUserAuth,
+  authMiddleware.checkRole(["vendor"]),
+  vendorController.getMyProductById,
+);
+
+// GET VENDOR ORDERS
+router.get(
+  "/orders",
+  authMiddleware.checkUserAuth,
+  authMiddleware.checkRole(["vendor"]),
+  vendorController.getVendorOrders,
+);
+
+// UPDATE ORDER STATUS
+router.put(
+  "/order-status/:id",
+  authMiddleware.checkUserAuth,
+  authMiddleware.checkRole(["vendor"]),
+  vendorController.updateOrderStatus,
+);
+
+// ORDER DETAILS
+router.get(
+  "/order/:id",
+  authMiddleware.checkUserAuth,
+  authMiddleware.checkRole(["vendor"]),
+  vendorController.orderDetails,
+);
+
 module.exports = router;

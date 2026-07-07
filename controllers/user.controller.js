@@ -201,10 +201,12 @@ userController.myOrders = async (req, res) => {
       include: [
         {
           model: OrderItem,
+          as: "orderItems",
 
           include: [
             {
               model: Product,
+              as: "product",
             },
           ],
         },
