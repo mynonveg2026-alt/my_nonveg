@@ -63,6 +63,7 @@ vendorController.getVendorProfile = async (req, res) => {
       include: [
         {
           model: User,
+          as: "user",
           attributes: {
             exclude: ["password"],
           },

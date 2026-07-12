@@ -29,7 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 // CORS
 app.use(
   cors({
-    origin: "*",
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
